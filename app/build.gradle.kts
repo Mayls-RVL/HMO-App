@@ -2,16 +2,18 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.ksp)
+    alias(libs.plugins.hilt)
 }
 
 android {
-    namespace = "com.example.hmo_app"
+    namespace = "com.example.weatherappandroidcompose"
     compileSdk {
         version = release(36)
     }
 
     defaultConfig {
-        applicationId = "com.example.hmo_app"
+        applicationId = "com.example.weatherappandroidcompose"
         minSdk = 24
         targetSdk = 36
         versionCode = 1
@@ -57,4 +59,31 @@ dependencies {
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
+
+    // For Icons
+    implementation(libs.androidx.material3)
+    implementation(libs.androidx.compose.material.icons.core)
+    implementation(libs.androidx.compose.material.icons.extended)
+
+    // View Model
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
+
+    // Hilt
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.compiler)
+    implementation(libs.hilt.navigation.compose)
+
+    // Retrofit
+    implementation(libs.squareup.retrofit2.retrofit)
+    implementation(libs.squareup.retrofit2.converter.gson)
+    // OkHttp
+    implementation(libs.squareup.okhttp3.logging.interceptor)
+    // Coroutines
+    implementation(libs.kotlinx.coroutines.android)
+    // Navigation
+    implementation(libs.androidx.navigation.compose)
+    // Data Store
+    implementation(libs.androidx.datastore)
 }
+
+// Edited for dependancies (-Jeff)
