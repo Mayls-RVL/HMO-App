@@ -11,12 +11,13 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.hmo_app.screens.LoginPage
 
 @Composable
 fun NavPath(navController: NavHostController = rememberNavController()){
-    NavHost(navController = navController, startDestination = "landing"){
+    NavHost(navController = navController, startDestination = "login"){
         composable(
-            route = "landing",
+            route = "login",
             exitTransition = {
                 slideOutHorizontally(
                     targetOffsetX = { -it },
@@ -25,6 +26,13 @@ fun NavPath(navController: NavHostController = rememberNavController()){
             }
         ){
             // Insert Screen Here
+            LoginPage(
+                onLogin = {
+                    navController.navigate("main") {
+                        popUpTo("login") { inclusive = true }
+                    }
+                }
+            )
         }
     }
 }
