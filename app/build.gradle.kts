@@ -94,14 +94,14 @@ dependencies {
     implementation(libs.osmdroid)
 
     // MapLibre (used for turn-by-turn navigation screen)
-    implementation(libs.maplibre) {
-        exclude(group = "org.maplibre.gl", module = "android-sdk-geojson")
-        exclude(group = "org.maplibre.gl", module = "android-sdk-turf")
-    }
+//    implementation(libs.maplibre) {
+//        exclude(group = "org.maplibre.gl", module = "android-sdk-geojson")
+//        exclude(group = "org.maplibre.gl", module = "android-sdk-turf")
+//    }
 
     // MapLibre Navigation Core
-    implementation(libs.maplibre.navigation.core)
-    implementation(libs.maplibre.geojson)
+//    implementation(libs.maplibre.navigation.core)
+//    implementation(libs.maplibre.geojson)
     implementation(libs.kotlinx.serialization.json)
 
     // For Live Location Tracking
